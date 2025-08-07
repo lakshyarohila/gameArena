@@ -1,4 +1,4 @@
-// games/math-puzzle/script.js
+
 
 let correctAnswer = 0;
 let score = 0;

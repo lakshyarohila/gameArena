@@ -1,4 +1,4 @@
-// games/tic-tac-toe/script.js
+
 
 const board = document.getElementById("game-board");
 const statusDiv = document.getElementById("status");
