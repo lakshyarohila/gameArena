@@ -11,6 +11,14 @@ body {
   padding: 0;
   line-height: 1.6;
 }
+span{
+margin-left: 80%;
+display: block;
+margin-bottom: 40px;
+border: yellow;
+border-radius: 50%;
+
+}
 
 /* Game grid base styles */
 .game-grid {
