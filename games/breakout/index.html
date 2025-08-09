@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Breakout - Game Arena</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🧱 Breakout</h1>
+  </header>
+
+  <main class="container">
+    <div class="top-info">
+      <div>Score: <span id="score">0</span></div>
+      <div>Lives: <span id="lives">3</span></div>
+    </div>
+
+    <div class="canvas-wrap">
+      <canvas id="gameCanvas" role="img" aria-label="Breakout game canvas"></canvas>
+
+      <!-- overlay placed above canvas; we hide it while playing -->
+      <div id="overlay" class="overlay">
+        <button id="startBtn">Start</button>
+        <button id="restartBtn" style="display:none">Restart</button>
+        <button id="homeBtn">Back to Home</button>
+      </div>
+    </div>
+
+    <div class="legend">
+      <small>Use ← → or A/D to move. Tap and drag on mobile, or click near paddle to launch.</small>
+    </div>
+  </main>
+
+  <footer>
+    <small>Break bricks. Don't lose all lives.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

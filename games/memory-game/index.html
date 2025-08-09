@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Memory Game - Game Arena</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🧠 Memory Match</h1>
+  </header>
+
+  <section class="controls">
+    <div class="stats">
+      <div>Moves: <span id="moves">0</span></div>
+      <div>Time: <span id="time">00:00</span></div>
+    </div>
+    <div class="buttons">
+      <button id="restartBtn">Restart</button>
+      <button id="homeBtn">Back to Home</button>
+    </div>
+  </section>
+
+  <main>
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <footer>
+    <small>Match all pairs to win — tap cards to flip.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Reaction Timer - Game Arena</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>⚡ Reaction Timer</h1>
+  <p>Wait for green, then tap/click as fast as you can!</p>
+
+  <div id="game-area" class="game-area">Click "Start" to begin</div>
+
+  <div class="stats">
+    <p>Last Time: <span id="last-time">--</span> ms</p>
+    <p>Best Time: <span id="best-time">--</span> ms</p>
+  </div>
+
+  <div class="controls">
+    <button id="start-btn">Start</button>
+    <button onclick="goHome()">Back to Home</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

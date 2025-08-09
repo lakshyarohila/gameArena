@@ -1,0 +1,105 @@
+
+
+:root{
+  --bg: #121212;
+  --card-back: linear-gradient(135deg,#2f3542,#374151);
+  --accent: #ffb86b;
+  --text: #ffffff;
+}
+
+* { box-sizing: border-box; }
+html,body { height: 100%; margin: 0; padding: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: var(--bg); color: var(--text); }
+
+header { text-align:center; padding:18px 10px 6px; }
+h1 { margin:0; font-size:1.4rem; letter-spacing:0.2px; }
+
+.controls { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 16px; max-width:900px; margin:0 auto 8px; }
+.stats { display:flex; gap:16px; font-weight:600; }
+.buttons { display:flex; gap:8px; }
+
+button {
+  background: var(--accent);
+  border: none;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  color:#000;
+}
+
+main { display:flex; justify-content:center; padding:10px; }
+.grid {
+  width: min(92vw, 480px);
+  display: grid;
+  gap:10px;
+  /* 4x4 layout (16 cards) */
+  grid-template-columns: repeat(4, 1fr);
+  perspective: 1000px;
+}
+
+/* Card */
+.card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 400ms ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* inner 3D wrapper */
+.card .inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 400ms ease;
+  border-radius: 10px;
+}
+
+/* flipped state */
+.card.flipped .inner {
+  transform: rotateY(180deg);
+}
+
+/* matched state styling */
+.card.matched { box-shadow: 0 6px 18px rgba(0,0,0,0.6) inset; }
+
+/* faces */
+.front, .back {
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  font-size: 2rem;
+  font-weight:700;
+}
+
+/* back face (hidden symbol) */
+.back {
+  background: var(--card-back);
+  color: #fff;
+  transform: rotateY(0deg);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+/* front face (revealed symbol) */
+.front {
+  background: linear-gradient(180deg,#fff,#f8fafc);
+  color: #111;
+  transform: rotateY(180deg);
+  font-size: 1.8rem;
+}
+
+/* small screen tweaks */
+@media (max-width: 420px) {
+  .grid { gap:8px; grid-template-columns: repeat(4, 1fr); width: min(94vw, 420px); }
+  .front { font-size: 1.4rem; }
+  .controls { padding:10px; }
+  button { padding:7px 10px; border-radius:7px; font-size:0.95rem; }
+}
+
+footer { text-align:center; padding:12px; opacity:0.7; font-size:0.9rem; }
